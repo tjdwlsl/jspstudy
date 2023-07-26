@@ -1,0 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type = "text/javascript">
+
+
+		//1.객체 생성
+		var request = new XMLHttpRequest();
+		
+		//2. open("전송방식", "경로", "비동기 여부")
+		request.open("POST", "data.html", false);
+		
+		//4. 검사해서 성공하면 화면 출력(자리가 3번 밑으로 가면 오류 발생)
+		
+		//3. send() : 실행
+		request.send();
+
+		
+		
+	</script>
+</body>
+</html>

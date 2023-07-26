@@ -1,0 +1,30 @@
+package com.ict.model;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.ict.db.DAO;
+import com.ict.db.MVO;
+
+public class MyModel08 implements Command{
+	@Override
+	public String exec(HttpServletRequest request, HttpServletResponse response) {
+		//DB가서 members 테이브르이 전체 정보 가져오기
+		List<MVO> list = DAO.membersList();
+		System.out.println(list.get(0).getM_name());
+		
+		//xml, json, text로 마들어서 controller로 넘어가자
+		StringBuffer sb = new StringBuffer();
+		sb.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
+		sb.append("<member>");
+		for (MVO k : list) {
+			sb.append("<member>");
+		}
+		
+		
+		sb.append("</member>");
+		return null;
+	}
+}

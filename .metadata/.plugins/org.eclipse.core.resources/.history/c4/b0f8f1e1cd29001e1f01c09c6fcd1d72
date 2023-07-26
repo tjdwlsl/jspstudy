@@ -1,0 +1,13 @@
+package com.ict.model;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class MyModel08 implements Command{
+	@Override
+	public String exec(HttpServletRequest request, HttpServletResponse response) {
+		//DB가서 members 테이브르이 전체 정보 가져오기
+		return "";
+		
+	}
+}

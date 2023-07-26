@@ -1,0 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>한 줄 뉴스 - 자바스크립트</title>
+<script type="text/javascript">
+	var news=["
+		'추경 없다' 선언 여당, 수해 복구 재원 방안 '부심'
+		홍준표, ‘수해중 골프’ 논란 나흘만에 “국민정서 고려못해” 사과
+		"제 손녀는 중학생"...한기호, 초등교사 극단선택 '갑질설' 일축
+		미 “북한, 아직 무응답…월북 군인 송환 위해 모든 조치”
+		‘무장반란’ 프리고진 “우크라는 관여할 필요 없는 치욕”"]
+	var index = 0;
+	var timer ;
+	function start_news(){
+		//2초마다 showNews()를 실행 하자(showNews() 콜백함수)
+		timer = setInterval(showNews, 2000);
+	}
+	function showNews() {
+		var div = document.getElementById("mydiv");
+	}
+	
+</script>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<button onclick="start_news">뉴스보기</button>
+	<button onclick="stop_news">뉴스중지</button>
+</body>
+</html>

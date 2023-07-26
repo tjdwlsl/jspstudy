@@ -1,0 +1,16 @@
+package com.ict.model;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class MyModel01 implements Command{
+	@Override
+	public String exec(HttpServletRequest request, HttpServletResponse response) {
+		//일처리
+		List<VO>
+		
+		
+		//ajax 처리하는 모델은 return을 갈 곳에 주소를 쓰지 않음
+		return null;
+	}
+}

@@ -1,0 +1,37 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css"></style>
+<%-- jQuery 라이브러리 CDN --%>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script type="text/javascript"> 
+$(document).ready(function(){
+	var position = 0;
+	var timer;
+	$("#btn").on("click", function() {
+		$("img").animate({
+			left: "+=800",
+			bottom: "-=800"
+		});
+	});
+	$("img").on("click", function() {
+		clearInterval(timer);
+	});
+});
+</script>
+</head>
+<body>
+	<p><button id="btn">이동</button></p>
+	<div>
+		<img alt="" src="../images/pds3.jpg">
+		<img alt="" src="../images/pds2.jpg">
+		<img alt="" src="../images/pds1.jpg">
+		<img alt="" src="../images/pds.jpg">
+		
+	</div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	fieldset {
+	width: 350px;
+	}
+
+#mydiv{
+	width:600px;
+	margin: auto;
+}
+#mydiv2{
+	width:600px;
+	margin: auto;
+}
+#mydiv3{
+	width:600px;
+	margin: auto;
+}
+label{
+	width: 50px;
+	height: 30px;
+	float: left;
+	line-height: 20px;
+}
+input {
+	height: 30px;
+}
+</style>
+<script type="text/javascript">
+	function send_go(f){
+		// 자바스크립트를 사용할 때 required가 실행되지 않음
+		// 그러므로 유효성 검사를 해야함
+		var num1 = f.num1.value;
+		if(num1 == ''){
+			alert("수1을 입력하세요.");
+			f.num1.focus();
+			return;
+		}
+		var num2 = f.num2.value;
+		if(num2 == ''){
+			alert("수2을 입력하세요.");
+			f.num2.focus();
+			return;
+		}
+		// form에 action이 있으면 생략, 없으면 코..딩..?
+				
+		f.action="/01_servlet/Ex07";
+		f.submit();
+	}
+</script>
+</head>
+<body>
+	<div id="mydiv">
+		<form action="/01_servlet/Ex07" method="post">
+			<fieldset>
+					<legend>계산기</legend>
+					<p><label for="num1">수1 : </label><input type="number" name="num1" id="num1" required></p>	
+					<p><label for="num2">수2 : </label><input type="number" name="num2" id="num2" required></p>	
+					
+					<p><label>연산자 :</label>
+						<input type="radio" name="op" value="+">+
+						<input type="radio" name="op" value="-">-
+						<input type="radio" name="op" value="*">*
+						<input type="radio" name="op" value="/">/
+					</p>		
+			</fieldset>
+			<input type="submit"  value="결과보기">
+		</form>
+	</div>
+	<hr>
+	
+	<div id="mydiv2">
+		<form method="post">
+			<fieldset>
+					<legend>계산기</legend>
+					<p><label for="num1">수1 : </label><input type="number" name="num1" id="num1" required></p>	
+					<p><label for="num2">수2 : </label><input type="number" name="num2" id="num2" required></p>	
+					
+					<p><label>연산자 :</label>
+						<input type="radio" name="op" value="+">+
+						<input type="radio" name="op" value="-">-
+						<input type="radio" name="op" value="*">*
+						<input type="radio" name="op" value="/">/
+					</p>		
+			</fieldset>
+			<input type="button"  value="결과보기" onclick="send_go(this.form)">
+		</form>
+	</div>
+	<hr>
+	
+	<div id="mydiv3">
+		<form method="post" onsubmit="send_go(this)">
+			<fieldset>
+					<legend>계산기</legend>
+					<p><label for="num1">수1 : </label><input type="number" name="num1" id="num1" required></p>	
+					<p><label for="num2">수2 : </label><input type="number" name="num2" id="num2" required></p>	
+					
+					<p><label>연산자 :</label>
+						<input type="radio" name="op" value="+">+
+						<input type="radio" name="op" value="-">-
+						<input type="radio" name="op" value="*">*
+						<input type="radio" name="op" value="/">/
+					</p>		
+			</fieldset>
+			<input type="submit"  value="결과보기">
+		</form>
+	</div>
+</body>
+</html>
